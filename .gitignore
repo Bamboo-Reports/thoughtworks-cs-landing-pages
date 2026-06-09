@@ -1,0 +1,13 @@
+# dependencies & build output
+node_modules/
+dist/
+.vite/
+
+# local tooling
+.agents/
+.claude/
+skills-lock.json
+
+# os / logs
+.DS_Store
+*.log
