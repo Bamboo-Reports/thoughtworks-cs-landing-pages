@@ -14,8 +14,17 @@
   --text:      #3d4a4f;
   --muted:     #8a9499;
 
-  --font: 'DM Sans', sans-serif;
+  /* Thoughtworks brand type system */
+  --font-head: 'Bitter', Georgia, serif;       /* Bold (700) only */
+  --font-body: 'Inter', sans-serif;            /* variable: 360 body, 630 callout/subhead */
+  --font: var(--font-body);
 }
+
+/* Inter variable-weight helpers (font-variation-settings overrides font-weight,
+   so 'wght' is restated wherever used). Genuine italics get slant -10 per brand. */
+.fw-body { font-variation-settings: 'wght' 360; font-weight: 360; }
+.fw-bold { font-variation-settings: 'wght' 630; font-weight: 630; }
+i, .italic { font-style: italic; font-variation-settings: 'wght' 360, 'slnt' -10; }
 
 /* ─────────────────────────────────────────
    RESET
@@ -25,7 +34,9 @@
 html, body { height: 100%; overflow: hidden; }
 
 body {
-  font-family: var(--font);
+  font-family: var(--font-body);
+  font-variation-settings: 'wght' 360;
+  font-weight: 360;
   color: var(--text);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
@@ -129,7 +140,8 @@ em  { font-style: normal; color: var(--teal); }
   align-items: center;
   gap: 7px;
   font-size: 11px;
-  font-weight: 600;
+  font-variation-settings: 'wght' 630;
+  font-weight: 630;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -143,11 +155,12 @@ em  { font-style: normal; color: var(--teal); }
 }
 
 .headline {
-  font-size: clamp(46px, 5.6vw, 76px);
-  font-weight: 600;
+  font-family: var(--font-head);
+  font-size: clamp(44px, 5.2vw, 70px);
+  font-weight: 700;
   color: var(--ink);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
   margin-bottom: 22px;
   opacity: 0;
   animation: fadeUp 0.55s ease 0.24s forwards;
@@ -156,7 +169,8 @@ em  { font-style: normal; color: var(--teal); }
 
 .subheadline {
   font-size: clamp(18px, 2vw, 23px);
-  font-weight: 400;
+  font-variation-settings: 'wght' 630;
+  font-weight: 630;
   color: var(--text);
   line-height: 1.38;
   letter-spacing: -0.01em;
@@ -168,7 +182,8 @@ em  { font-style: normal; color: var(--teal); }
 
 .description {
   font-size: 15px;
-  font-weight: 400;
+  font-variation-settings: 'wght' 360;
+  font-weight: 360;
   color: var(--muted);
   line-height: 1.72;
   max-width: 470px;
@@ -200,7 +215,8 @@ em  { font-style: normal; color: var(--teal); }
 .pillar__num {
   flex-shrink: 0;
   font-size: 12px;
-  font-weight: 600;
+  font-variation-settings: 'wght' 630;
+  font-weight: 630;
   letter-spacing: 0.08em;
   color: var(--pink);
   font-variant-numeric: tabular-nums;
@@ -209,7 +225,8 @@ em  { font-style: normal; color: var(--teal); }
 .pillar__text { display: flex; flex-direction: column; gap: 2px; }
 .pillar__text strong {
   font-size: 14.5px;
-  font-weight: 600;
+  font-variation-settings: 'wght' 630;
+  font-weight: 630;
   color: var(--ink);
   letter-spacing: -0.01em;
 }
@@ -242,7 +259,8 @@ em  { font-style: normal; color: var(--teal); }
 
 .form-card__title {
   font-size: clamp(20px, 1.9vw, 25px);
-  font-weight: 600;
+  font-variation-settings: 'wght' 630;
+  font-weight: 630;
   color: var(--ink);
   line-height: 1.22;
   letter-spacing: -0.02em;
