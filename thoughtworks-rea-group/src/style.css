@@ -116,7 +116,7 @@ em  { font-style: normal; color: var(--teal); }
   animation: fadeUp 0.5s ease 0.05s forwards;
 }
 .logo--tw   { height: 22px; width: auto; }
-.logo--rnxt { height: 22px; width: auto; }
+.logo--rnxt { width: 108px; height: auto; }
 .logo-divider {
   display: block;
   width: 1px;
@@ -425,7 +425,7 @@ em  { font-style: normal; color: var(--teal); }
   /* logos shrink and wrap safely */
   .logos { gap: 16px; flex-wrap: wrap; }
   .logo--tw   { height: 18px; }
-  .logo--rnxt { height: 18px; }
+  .logo--rnxt { width: 84px; height: auto; }
   .logo-divider { height: 18px; }
 
   .content { margin-top: 30px; }
